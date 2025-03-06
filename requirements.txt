@@ -3,3 +3,4 @@ python-dotenv
 pillow
 mysqlclient
 python-telegram-bot
+django-jazzmin

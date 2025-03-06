@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.views.generic import View, TemplateView, CreateView
+from django.shortcuts import redirect
+from django.views.generic import TemplateView, CreateView, ListView
+from django.db.models import Q
 
 from core.models import Master, Service, Visit
 from core.forms import VisitForm
@@ -10,6 +11,7 @@ MENU = [
     {'title': 'Услуги', 'url': '#services', 'active': True},
     {'title': 'Запись на стрижку', 'url': '#orderForm', 'active': True},
 ]
+
 
 class MainPageView(CreateView):
     template_name = 'main.html'
@@ -23,7 +25,6 @@ class MainPageView(CreateView):
         context['masters'] = Master.objects.all()
         context['services'] = Service.objects.all()
         return context
-
 
 
 class ThanksView(TemplateView):
