@@ -7,6 +7,13 @@ load_dotenv()
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 PERSONAL_CHAT_ID = os.getenv("PERSONAL_CHAT_ID")
 
+JAZZMIN_UI_TWEAKS = {
+    "theme": "flatly",
+    "sticky_actions": True,
+    "actions_sticky_top": True,
+}
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')

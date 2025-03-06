@@ -26,19 +26,9 @@ make_completed.short_description = "Отметить выполненными"
 make_unverified.short_description = "Отметить неподтвержденными"
 
 
-class VisitInline(admin.TabularInline):
-    model = Visit
-    extra = 0
-    readonly_fields = ("created_at",)
-    fields = ("name", "phone", "status", "created_at")
-    max_num = 10
-    ordering = ("-created_at",)
-
-
 @admin.register(Master)
 class MasterAdmin(admin.ModelAdmin):
     list_display = ("first_name", "last_name", "phone")
-    # inlines = [VisitInline]
     filter_horizontal = ("services",)
     search_fields = ("first_name", "last_name")
 
